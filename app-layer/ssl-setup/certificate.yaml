@@ -5,7 +5,7 @@ metadata:
   namespace: demo-app
 spec:
   dnsNames:
-    - demo-app-julscloudops.ga 
+    - demo-app-gabrieletupini.ga 
   secretName: frontend-secret
   issuerRef:
     name: letsencrypt-cluster-issuer

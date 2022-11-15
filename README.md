@@ -1,5 +1,23 @@
-This project showcases the implementation of a CI/CD pipeline that builds, tests and deploys a containerized microservice application to an AWS EKS cluster with the use of Jenkins and ArgoCD.
+Git Ops Demo Production Grade Environment Continuously being Updated made for Practical and Study Purposes
 
-All of the infrastructure is deployed to AWS using Terraform and the state is kept in an S3 bucket. The pipeline builds, tests and deploys container images to ECR when a new pull request is made to the respective GitHub repository of a given microservice. The app itself is deployed using ArgoCD which will constantly update the cluster based on the manifest files and helm charts of a given GitHub repository. EFK Stack (Elasticsearch, Fluentd and Kibana) are used to provide centralized logging. Prometheus is used for showcasing the implementation of monitoring and alerting.
+Notion page: https://www.notion.so/GitOps-Demo-EKS-Cluster-Production-Grade-demo-7cd058e2a2c4440ebe41f9985948db52
 
-This is an on-going personal project and is still a WIP. For more in depth instructions about how to use the demo please head over to this public Notion page: https://julscampa.notion.site/IaC-with-Terraform-Demo-266a1fb53460429f84e41551c598790d
+Steps inside the Notion Page
+
+Step 1: General Pre-Setup and Download Binaries
+
+Step 2: Deploying IaC via Terraform and Connecting to EKS
+
+Step 3: Deploying ArgoCD / Bootstrapping the Cluster
+
+Step 4: Deploying and Setting up metric-based Monitoring with Prometheus (WIP)
+
+Step 5: Setting up Cert-Manager in Ingress, HTTPS / TLS termination for our frontend: Secure Access
+
+Step 6: Setting up Domain Name: DNS
+
+Step 7: Deploying and configuring the EFK Stack: Logs
+
+Step 8: Deploying the Jenkins-ECR module and configuring the CICD pipeline
+
+Step 9: Deploying and configuring Velero: Backup Function

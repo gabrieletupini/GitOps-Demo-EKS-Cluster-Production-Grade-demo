@@ -8,7 +8,7 @@ metadata:
   namespace: demo-app
 spec:
   rules:
-    - host: demo-app-julscloudops.ga
+    - host: demo-app-gabrieletupini.ga
       http:
         paths:
         - path: /
@@ -17,5 +17,5 @@ spec:
             servicePort: 80
   tls:
   - hosts: 
-    - demo-app-julscloudops.ga
+    - demo-app-gabrieletupini.ga
     secretName: frontend-secret

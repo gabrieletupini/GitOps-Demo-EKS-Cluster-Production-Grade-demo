@@ -20,12 +20,12 @@ proxy-argocd:
 bootstrap: add-helm-repo install-demo-app install-prometheus install-grafana install-ingress-nginx install-cert-manager install-fluentd install-elasticsearch install-kibana install-sealed-secrets install-velero 
 
 add-helm-repo:
-	argocd repo add https://github.com/julscloudops/ManifestsForArgoCD
+	argocd repo add https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo
 
 install-demo-app:
 	kubectl create namespace demo-app || true
 	argocd app create demo-app \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path app \
 	--dest-namespace demo-app \
 	--dest-server https://kubernetes.default.svc 
@@ -34,14 +34,14 @@ install-demo-app:
 install-prometheus:
 	kubectl create namespace monitoring || true
 	argocd app create prometheus \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/kube-prometheus --dest-namespace monitoring \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync prometheus
 
 install-grafana:
 	argocd app create grafana \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/grafana --dest-namespace monitoring \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync grafana
@@ -49,7 +49,7 @@ install-grafana:
 install-ingress-nginx:
 	kubectl create namespace ingress-nginx || true
 	argocd app create ingress-nginx \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/nginx-ingress-controller --dest-namespace ingress-nginx \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync ingress-nginx
@@ -57,7 +57,7 @@ install-ingress-nginx:
 install-cert-manager:
 	kubectl create namespace cert-manager || true
 	argocd app create cert-manager \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/cert-manager --dest-namespace cert-manager \
 	--dest-server https://kubernetes.default.svc 	
 	argocd app sync cert-manager
@@ -67,28 +67,28 @@ install-cert-manager:
 install-fluentd:
 	kubectl create namespace logging || true
 	argocd app create fluentd \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/fluentd --dest-namespace logging \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync fluentd
 
 install-elasticsearch:
 	argocd app create elasticsearch \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/elasticsearch --dest-namespace logging \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync elasticsearch
 
 install-kibana:
 	argocd app create kibana \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/kibana --dest-namespace logging \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync kibana
 
 install-sealed-secrets:
 	argocd app create sealed-secrets \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/sealed-secrets --dest-namespace kube-system \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync sealed-secrets
@@ -97,7 +97,7 @@ install-velero:
 	kubectl create namespace velero || true
 	kubectl create secret generic -n velero credentials --from-file=cloud=credentials
 	argocd app create velero \
-	--repo https://github.com/julscloudops/ManifestsForArgoCD \
+	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/velero --dest-namespace velero \
 	--dest-server https://kubernetes.default.svc 
 	argocd app sync velero
