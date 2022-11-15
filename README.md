@@ -18,6 +18,12 @@ Step 6: Setting up Domain Name: DNS
 
 Step 7: Deploying and configuring the EFK Stack: Logs
 
+<<<<<<< HEAD
 Step 8: Deploying the Jenkins-ECR module and configuring the CICD pipeline
 
 Step 9: Deploying and configuring Velero: Backup Function
+=======
+Step 8: Deploying the Jenkins-ECR module and configuring the CICD pipeline 
+
+Step 9: Deploying and configuring Velero: Backup Function
+>>>>>>> 0d4434c9db78edb53d906ac17cd3754fd8f49879
