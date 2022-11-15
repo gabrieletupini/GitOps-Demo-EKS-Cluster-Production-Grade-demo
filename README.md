@@ -1,4 +1,4 @@
-Git Ops Demo Production Grade Environment Continuously being Updated
+Git Ops Demo Production Grade Environment Continuously being Updated made for Practical and Study Purposes
 
 Notion page: https://www.notion.so/GitOps-Demo-EKS-Cluster-Production-Grade-demo-7cd058e2a2c4440ebe41f9985948db52
 
