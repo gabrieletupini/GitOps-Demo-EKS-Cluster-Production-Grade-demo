@@ -8,7 +8,7 @@ Step 1: General Pre-Setup and Download Binaries
 
 Step 2: Deploying IaC via Terraform and Connecting to EKS
 
-Step 3: Deploying ArgoCD / Bootstrapping the Cluster
+Step 3: Deploying GitHub Actions / Bootstrapping the Clusters
 
 Step 4: Deploying and Setting up metric-based Monitoring with Prometheus (WIP)
 
@@ -18,7 +18,4 @@ Step 6: Setting up Domain Name: DNS
 
 Step 7: Deploying and configuring the EFK Stack: Logs
 
-Step 8: Deploying the Jenkins-ECR module and configuring the CICD pipeline
-
-Step 9: Deploying and configuring Velero: Backup Function
 

@@ -8,8 +8,12 @@ terraform {
 }
 
 # Creates the S3 to store the remote state
+
+
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "backend-state1234"
+
+
   # Enable versioning so we can see the full revision history of our 
   # state files
 
@@ -39,3 +43,8 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
+
+ 
+resource "aws_secretsmanager_secret" "example" {
+  name = "example"
+}
