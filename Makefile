@@ -46,11 +46,11 @@ install-kibana:
 	argocd app sync kibana
 
 install-jira:
-	argocd app create sealed-secrets \
+	argocd app create jira \
 	--repo https://github.com/gabrieletupini/GitOps-Demo-EKS-Cluster-Production-Grade-demo \
 	--path charts/sealed-secrets --dest-namespace kube-system \
 	--dest-server https://kubernetes.default.svc 
-	argocd app sync sealed-secrets
+	argocd app sync jira
 
 install-velero:
 	kubectl create namespace velero || true
