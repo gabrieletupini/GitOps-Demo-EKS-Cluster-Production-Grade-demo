@@ -197,4 +197,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: cluster-autoscaler
-    namespace: kube:system
+    namespace: kube-system
