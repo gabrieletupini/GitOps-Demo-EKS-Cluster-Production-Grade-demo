@@ -9,7 +9,7 @@ resource "aws_subnet" "private-us-east-1a" {
   tags = {
     "Name" = "private-us-east-1a" 
     "kubernetes.io/role/internal-elb" = "1" #required for kubernetes to discover subnets where private load balancers will be created
-    "kubernetes.io/cluster/dev"      = "owned"
+    "kubernetes.io/cluster/qa"      = "owned"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_subnet" "private-us-east-1b" {
   tags = {
     "Name" = "private-us-east-1a" 
     "kubernetes.io/role/internal-elb" = "1" #required for kubernetes to discover subnets where private load balancers will be created
-    "kubernetes.io/cluster/dev"      = "owned"
+    "kubernetes.io/cluster/qa"      = "owned"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_subnet" "public-us-east-1a" {
   tags = {
     "Name" = "public-us-east-1a" 
     "kubernetes.io/role/internal-elb" = "1" #required for kubernetes to discover subnets create public load balancers will be created
-    "kubernetes.io/cluster/dev"      = "owned"
+    "kubernetes.io/cluster/qa"      = "owned"
   }
 }
 
@@ -53,6 +53,6 @@ resource "aws_subnet" "public-us-east-1b" {
   tags = {
     "Name" = "public-us-east-1b" 
     "kubernetes.io/role/internal-elb" = "1" #required for kubernetes to discover subnets create public load balancers will be created
-    "kubernetes.io/cluster/dev"      = "owned"
+    "kubernetes.io/cluster/qa"      = "owned"
   }
 }

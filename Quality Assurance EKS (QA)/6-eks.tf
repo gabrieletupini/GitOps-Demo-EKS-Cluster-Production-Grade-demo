@@ -1,7 +1,7 @@
 #before createing eks cluster a IAM role is necessary
 
-resource "aws_iam_role" "dev" {
-  name = "eks-cluster-dev"
+resource "aws_iam_role" "qa" {
+  name = "eks-cluster-qa"
 
   assume_role_policy = <<POLICY
 {
@@ -19,12 +19,12 @@ resource "aws_iam_role" "dev" {
 POLICY
 }
 
-#then we attach the required IAM policy with the eks-cluster-dev IAM role
+#then we attach the required IAM policy with the eks-cluster-qa IAM role
 
 
-resource "aws_iam_role_policy_attachment" "dev-AmazonEKSClusterPolicy" {
+resource "aws_iam_role_policy_attachment" "qa-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.dev.name
+  role       = aws_iam_role.qa.name
 }
 
 
@@ -33,9 +33,9 @@ resource "aws_iam_role_policy_attachment" "dev-AmazonEKSClusterPolicy" {
 
 
 
-resource "aws_eks_cluster" "dev" {
-  name     = "dev"
-  role_arn = aws_iam_role.dev.arn
+resource "aws_eks_cluster" "qa" {
+  name     = "qa"
+  role_arn = aws_iam_role.qa.arn
 
   vpc_config {
     subnet_ids = [
@@ -45,7 +45,7 @@ resource "aws_eks_cluster" "dev" {
       aws_subnet.public-us-east-1b.id
    ]
 
-  depends_on = [aws_iam_role_policy_attachment.dev-AmazonEKSClusterPolicy] 
+  depends_on = [aws_iam_role_policy_attachment.qa-AmazonEKSClusterPolicy] 
   #until the IAM role is ready, EKS cluster will not be created
 
 }
